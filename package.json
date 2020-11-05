@@ -1,0 +1,20 @@
+{
+  "name": "@dousha99/wstester",
+  "version": "0.0.1",
+  "description": "WebSocket Application Testing Tool",
+  "main": "build/index.js",
+  "repository": "https://github.com/dousha/wstester.git",
+  "author": "dousha99 <lijiahao34@live.com>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.6",
+    "@types/ws": "^7.2.9",
+    "typescript": "^4.0.5"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/tsc"
+  }
+}

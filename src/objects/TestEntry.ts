@@ -90,7 +90,7 @@ export class SendTestEntry extends TestEntry {
     }
 
     private compile(msg: string): Buffer {
-        return Buffer.from(msg.replace(/\${(.*?)}/g, (_, g) => this.ctx.get<any>(g).toString()));
+        return Buffer.from(msg.replace(/%{(.*?)}/g, (_, g) => this.ctx.get<any>(g).toString()));
     }
 
     private readonly msg?: Buffer;

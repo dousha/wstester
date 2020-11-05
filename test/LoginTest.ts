@@ -18,7 +18,7 @@ import { WebSocketTester } from '../index';
             ctx.set('token', parts[1]);
             return true;
         })
-        .send('aLOGIN ${token} ${user} ${pass}')
+        .send('aLOGIN %{token} %{user} %{pass}')
         .pipe(msg => msg.startsWith('LOGIN!'), msg => {
             const parts = msg.split(/ /g);
             if (parts.length !== 2) {
@@ -26,9 +26,9 @@ import { WebSocketTester } from '../index';
             }
             return parts[1] !== 'FAILED';
         })
-        .send('aLOGOUT ${token}')
+        .send('aLOGOUT %{token}')
         .pipe(msg => msg.startsWith('LOGOUT!'), () => true)
-        .send('sDISPOSE ${token}')
+        .send('sDISPOSE %{token}')
         .pipe(msg => msg.startsWith('DISPOSE!'), () => true)
         .run();
 })();
